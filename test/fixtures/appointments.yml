@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_day: 2017-03-10
+  time_slot: MyString
+  confirm_booking: false
+
+two:
+  appointment_day: 2017-03-10
+  time_slot: MyString
+  confirm_booking: false
