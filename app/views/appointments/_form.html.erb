@@ -1,0 +1,60 @@
+ <% Appointment::Time_Slots.each_with_index do |time_slot, i| %>
+ 
+ <%= form_for(appointment) do |f| %>
+ <% if i == 0 %>
+  <% if appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row-bordered content_align"> 
+   <%= f.label :appointment_on, :class => 'date_label' %>
+    <%= f.text_field :appointment_day, :class => 'input-lg datepicker', :value => @appointment_date %>
+  </div>
+ 
+  <h2 class="slot_heading"> <%= "Available slots on " + DateTime.parse(@appointment_date).strftime("%d %b %Y") %>  </h2>
+  
+  <% end %>
+ <div class="field11">
+  <li>
+    <%= f.hidden_field :time_slot, :value => time_slot %>
+    <%= f.hidden_field :appointment_day, :value => @appointment_date %>
+     <span class="slot"><%= time_slot %></span>  
+     
+     <% booked_time_slot = @appointments.present? ? @appointments.find { |h| h["time_slot"] == time_slot } : nil %>
+      
+     <% if @appointments.present? and booked_time_slot.present? %>
+         <span class="slot1"> <%= "This slot is booked!" %></span> 
+     <% else %>
+          <%= f.submit 'Book Now', :class => 'btn btn-primary btn-lg gradient' %>
+      <% end %>
+    </li>
+     </div> 
+ 
+ 
+ <% end %>
+ 
+ <% end %>
+ 
+ 
+ <script type="text/javascript">
+  $("input.datepicker, input.date-picker").datepicker({
+      format: 'dd/mm/yyyy', 
+      orientation : 'left', 
+      todayHighlight : true, 
+      autoClose: true, 
+      clearBtn: true
+}).on('changeDate', function (event) {
+     
+     window.location = "/appointments/new?selected_date="+event.format()
+        
+});
+  
+</script>

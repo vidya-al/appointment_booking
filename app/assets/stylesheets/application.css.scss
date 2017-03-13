@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ @import "bootstrap-sprockets";
+ @import 'bootstrap/theme';
+ @import "bootstrap-custom";
+  */
+ 
+ @import "bootstrap";
+ 
+ @import 'bootstrap-datepicker';
+ @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
+ 
+ body {
+    font-size: 18px;
+ }
+ 
+ html,body {
+	height:100%;
+}
+
+.panel {
+	height:100%;
+}
+ 
+.row-bordered {
+ border-bottom: 2px solid;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+ } 
+ 
+ .field11{
+ border-bottom: 1px solid;
+  padding: 18px;
+ } 
+ 
+ .content_align {
+    text-align: center;
+  }
+ 
+ .slot{
+  font-size: 17px;
+    font-weight: bold;
+    padding: 10px 62px 10px 10px;
+ }
+ .slot1{
+   color: #e65c00;
+    font-size: 17px;
+    margin: -50px;
+    padding-left: 47px;
+ }
+ 
+ .input-lg {
+    font-size: 14px;
+    height: 28px;
+    width: 116px;
+}
+
+.date_label{
+  font-size: 16px;
+}
+
+.panel-title {
+    color: #990000;
+    font-size: 24px;
+     margin-bottom: 5px;
+}
+li {
+  list-style-type: none;
+}
+h2 {
+  margin-bottom: 13px;
+  margin-top: 16px;
+} 
+.jumbotron {
+    padding: 2rem;
+    background-color: #ccccff;
+}
+.slot_heading {
+    color: #990000;
+ }
